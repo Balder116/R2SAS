@@ -1,0 +1,38 @@
+---
+title: "slmR2SAS"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{slmR2SAS}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+```{r setup}
+library(R2SAS)
+lm1 <- lm(Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width + Species,data = iris)
+SLMRtoSAS(lm1)
+lm2 <- lm(Sepal.Length ~ . ,data=iris)
+SLMRtoSAS(lm2)
+lm3 <- lm(Sepal.Length ~ Sepal.Width * Petal.Length * Petal.Width + Species,data = iris)
+SLMRtoSAS(lm3)
+lm4 <- lm(Sepal.Length ~ Sepal.Width * Petal.Length + Petal.Width * Species,data = iris)
+SLMRtoSAS(lm4)
+```
+
+This package can extract the factor and numeric variables from a simple linear model R code and re-built and export the SAS code for this simple linear model in txt form. The function can deal with factor and numeric variables as well as interaction terms (up to 3 interaction terms).
+
+In our examples, the simple linear model is defined in R language, and hence is our input for our package function SLMRtoSAS, the output of the SLMRtoSAS(lm) is a text file. 
+
+lm1: simple linear model with 4 predictors
+lm2: simple linear model in the form of ~ .
+lm3: simple linear model with 3 interaction terms 
+lm4: simple linear model with 2 interaction terms 
+

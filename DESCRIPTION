@@ -1,0 +1,22 @@
+Package: R2SAS
+Title: Convert R SLM code to SAS
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Haoting",
+           family = "Han",
+           role = c("aut", "cre"),
+           email = "haotinghan@ufl.edu"),
+    person(given = "Zhengya",
+           family = "Gao",
+           role = c("aut"),
+           email = "gaoz@ufl.edu"))
+Description: SLMRtoSAS saves the data to the current environment and outputs a text of converted sas code of SLM.
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
